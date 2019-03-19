@@ -1,54 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-    <head>
-        <title>Brötfolio</title>
-        <meta charset="utf-8">
-        
-        <style>
-            html {
-                height: 100%;
-            }
-
-            body {
-                background-color: black;
-                
-            }
-            h2 {
-                color:white;
-            }
-            .skull {
-                width: 20%;
-            }
-            .main {
-                position: absolute;
-                top: 35%;
-                width: 100%;
-              
-                justify-content: center;
-                align-items: center;
-                font-family:'Courier New', Courier, monospace;
-                /*border-style: ridge;
-                border-color: white;*/
-            }
-            .mid {
-                /*border-style: solid;
-                border-color:rosybrown;*/
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .drawings {
-              position: absolute;
-              left:75%
-            }
-            
-
-
-        </style>
-
-    </head>
+{{> head}}
     
     <body>
         <div class="main">
@@ -57,20 +7,22 @@
                 <img class="skull" src="/images/cover.jpg">
             </div>
 
-            <div class="drawings">
-                Drawings
-            </div>
+            <ul>
 
-            <div class="painting">
-                Painting
-            </div>
+              {{#section projects}}
+                <li>
+                  
+                  <h3><a href="{{_permalink}}">{{ohla}}</a></h3>
+                    {{niger}}, {{dumkopf}}
 
-            <div class="me">
-                Me
+                </li>
+              
+              {{/section}}
+            {{#unless projects}}
+                <p>sory aber kot</p>
+              {{/unless}}
 
-            </div>
-          
-
+            </ul>
         </div>
 
         
